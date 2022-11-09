@@ -1,9 +1,6 @@
-from django.shortcuts import get_object_or_404
-
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
 from rest_framework.validators import UniqueTogetherValidator
-
 
 from posts.models import Comment, Group, Follow, Post, User
 
@@ -24,13 +21,14 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         fields = '__all__'
         model = Comment
+        read_only_fields = ('post',)
 
 
 class GroupSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Group
-        fields = ('title', 'slug', 'description',)
+        fields = '__all__'
 
 
 class FollowSerializer(serializers.ModelSerializer):
@@ -50,14 +48,11 @@ class FollowSerializer(serializers.ModelSerializer):
         validators = [
             UniqueTogetherValidator(
                 queryset=Follow.objects.all(),
-                fields=['user', 'following']
+                fields=('user', 'following')
             )
         ]
 
-    def validate_following(self, value):
-
-        user = self.context.get('request').user
-        author = get_object_or_404(User, username=value)
-        if author == user:
+    def validate(self, data):
+        if data['user'] == data['following']:
             raise serializers.ValidationError('Подписка на себя невозможна')
-        return value
+        return data

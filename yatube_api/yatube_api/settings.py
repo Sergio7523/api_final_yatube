@@ -21,8 +21,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     'django_filters',
-    'api',
     'posts',
+    'api',
+    
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
@@ -105,3 +106,5 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
+
+SEVERAL_TEXT_CHARACTERS = 15
