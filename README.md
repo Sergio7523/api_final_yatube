@@ -1,53 +1,42 @@
+# **Yatube_API**
+___ 
+
+### *Технологии*
+- Python 3.7
+- Django
+- djangorestframework
+- SQLite
+
+___
+
+## *Описание проекта*
+
+Проект Yatube_API - API сервис для проекта [Yatube](https://github.com/Sergio7523/hw05_final)
+
+Функционал проекта Yatube доступен через API, аутентификация пользователей осуществляется через JWT-токены.
+
+После установки проекта полная документация к проекту доступна по адресу /redoc/
+___
 ## Установка
 
 Cоздать и активировать виртуальное окружение:
-
-Windows:
-
 ```sh
 python -m venv env
 
 source venv/scripts/activate
 ```
-MacOs:
-```sh
-python3 -m venv env
-
-source env/bin/activate
-```
 
 Установить зависимости из файла requirements.txt:
-
-Windows:
 ```sh
-python -m pip install --upgrade pip
-
 pip install -r requirements.txt
 ```
-MacOs:
-```sh
-python3 -m pip install --upgrade pip
-
-pip install -r requirements.txt
-```
-
 Выполнить миграции:
-
-Windows:
 ```sh
 python manage.py migrate
 ```
-MacOs:
-```sh
-python3 manage.py migrate
-```
 Запустить проект:
-
-Windows:
 ```sh
 python manage.py runserver
 ```
-MacOs:
-```sh
-python3 manage.py runserver
-```
+** Для установки на Linux и MacOs использовать команды python3 и source env/bin/activate
+___
