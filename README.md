@@ -1,14 +1,6 @@
 # **Yatube_API**
 ___ 
 
-### *Технологии*
-- Python 3.7
-- Django
-- djangorestframework
-- SQLite
-
-___
-
 ## *Описание проекта*
 
 Проект Yatube_API - API сервис для проекта [Yatube](https://github.com/Sergio7523/hw05_final)
@@ -17,6 +9,15 @@ ___
 
 После установки проекта полная документация к проекту доступна по адресу /redoc/
 ___
+
+### *Технологии*
+- Python 3.7
+- Django
+- djangorestframework
+- SQLite
+___
+
+
 ## Установка
 
 Cоздать и активировать виртуальное окружение:
